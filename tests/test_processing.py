@@ -1,5 +1,7 @@
 import pytest
+
 from src.processing import filter_by_state, sort_by_date
+
 
 @pytest.fixture
 def sample_transactions():
@@ -11,6 +13,7 @@ def sample_transactions():
         {"id": 5, "state": "EXECUTED", "date": "2024-03-11T10:30:00"},
     ]
 
+
 @pytest.fixture
 def transactions_same_date():
     return [
@@ -19,9 +22,11 @@ def transactions_same_date():
         {"id": 3, "date": "2024-03-15T11:30:00"},
     ]
 
+
 @pytest.fixture
 def empty_transactions():
     return []
+
 
 class TestFilterByState:
     @pytest.mark.parametrize(
@@ -54,6 +59,7 @@ class TestFilterByState:
         result = filter_by_state(transactions, "EXECUTED")
         result_ids = [item["id"] for item in result]
         assert result_ids == [1]
+
 
 class TestSortByDate:
     def test_sort_descending(self, sample_transactions):

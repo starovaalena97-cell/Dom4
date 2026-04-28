@@ -1,5 +1,7 @@
 import pytest
-from src.widget import mask_account_card, get_date
+
+from src.widget import get_date, mask_account_card
+
 
 class TestMaskAccountCard:
     @pytest.mark.parametrize(
@@ -26,6 +28,7 @@ class TestMaskAccountCard:
     def test_mask_account_card_empty(self):
         with pytest.raises(ValueError):
             mask_account_card("")
+
 
 class TestGetDate:
     @pytest.mark.parametrize(
