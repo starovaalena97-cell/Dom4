@@ -1,5 +1,6 @@
 import pytest
 
+
 @pytest.fixture
 def sample_transactions():
     """Фикстура с тестовыми данными транзакций"""
@@ -11,6 +12,7 @@ def sample_transactions():
         {"id": 5, "state": "EXECUTED", "date": "2024-03-11T10:30:00"},
     ]
 
+
 @pytest.fixture
 def transactions_same_date():
     """Фикстура с транзакциями, имеющими одинаковую дату"""
@@ -20,10 +22,12 @@ def transactions_same_date():
         {"id": 3, "date": "2024-03-15T11:30:00"},
     ]
 
+
 @pytest.fixture
 def empty_transactions():
     """Фикстура с пустым списком транзакций"""
     return []
+
 
 @pytest.fixture
 def sample_card_numbers():
@@ -34,6 +38,7 @@ def sample_card_numbers():
         "short": "1234",
         "empty": "",
     }
+
 
 @pytest.fixture
 def sample_account_numbers():
